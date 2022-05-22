@@ -5,7 +5,7 @@ matplotlib
 stockstats
 datetime
 stocker
-re
+
 requests
 BeautifulSoup
 pandas_datareader
