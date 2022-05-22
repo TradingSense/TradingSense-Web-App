@@ -1,2 +1,17 @@
 yahoo_fin
 yfinance
+pandas
+matplotlib
+stockstats
+datetime
+stocker
+re
+requests
+BeautifulSoup
+pandas_datareader
+numpy
+bs4
+regex
+dateutil
+time 
+dataframe_image
