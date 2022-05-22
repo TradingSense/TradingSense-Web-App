@@ -4,8 +4,6 @@ pandas
 matplotlib
 stockstats
 datetime
-stocker
-
 requests
 BeautifulSoup
 pandas_datareader
