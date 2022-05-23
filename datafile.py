@@ -21,8 +21,6 @@ picks = ['AAPL','AMZN','TSLA','XOM','BA']
 ## -- ## -- Get state values --
 today = date.today()
 
-yesterday = today - timedelta(days = 2)
-yesterday1 = yesterday.strftime('%Y-%m-%d')
 
 start = '2022-01-01'      
 end = datetime.today().strftime('%Y-%m-%d')
