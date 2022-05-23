@@ -38,7 +38,7 @@ st.write('---')
 def foo(ticker):
     today = date.today()
 
-    yesterday = today - timedelta(days = 2)
+    yesterday = today - timedelta(days = 3)
 
 
     start = '2022-01-01'      
