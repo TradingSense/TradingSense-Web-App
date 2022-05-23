@@ -50,7 +50,7 @@ def foo(ticker):
     custommfi = stock.get('mfi')[yesterday.strftime('%Y-%m-%d')].round(2)*100
     customwr = stock.get('wr')[yesterday.strftime('%Y-%m-%d')].round(2)
 
-    h = stocker.predict.tomorrow(5,ticker)[0]
+    h = stocker.predict.tomorrow(ticker)[0]
     live = si.get_live_price(ticker)
     other = si.get_quote_table(ticker)
 
