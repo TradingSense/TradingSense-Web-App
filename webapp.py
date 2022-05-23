@@ -37,10 +37,24 @@ uno=si.get_day_most_active()
 uno1 = uno.head()
 uno1.to_csv('dataframe.csv')
 content = pandas.read_csv('dataframe.csv')
-content = content['Symbol'].values
+content = content[['Symbol','% Change']].values
 
 
 st.write('---')
+
+col4.write('Todays Watchlist')
+col4.write(content)
+
+gain = si.get_day_gainers()
+gain = gain[['Symbol','% Change']].head()
+loser = si.get_day_losers()
+loser = loser[['Symbol','% Change']].head()
+
+
+col2.write('Todays Top Gainers')
+col2.write(gain)
+col3.write('Todays Top Losers')
+col3.write(loser)
 st.write('TradingSense uses machine learning to forecast upcoming stock prices. All data is sourced from Yahoo Finance and used to calculate RSI, MFI, P/E Ratio, and WR indcators.'+
            ' These are used in conjunction to provide trading signals to investors. TradingSense is not responsible for the outcome'+
            ' of trades made on the behalf of information sources on this site or the results of trades using info presented on this site. - TradingSense')
