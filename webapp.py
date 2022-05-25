@@ -43,7 +43,7 @@ yesterday = today - timedelta(days = 1)
 start = '2022-01-01'      
 end = datetime.today().strftime('%Y-%m-%d')
 lisp = ['AAPL','TSLA']
-h = stocker.predict.tomorrow(7,lisp[num])[0]
+h = stocker.predict.tomorrow(lisp[num])[0]
 live = si.get_live_price(lisp[num])
 customdata = yf.download(lisp[num],start,end)
 customframe = StockDataFrame.retype(customdata)
@@ -111,7 +111,7 @@ with col3:
         
         with prev.container():
             st.header('LTSM Prediction')
-            h = stocker.predict.tomorrow(7,lisp[num])[0]
+            h = stocker.predict.tomorrow(lisp[num])[0]
             difference = h - live
             difference = round(difference,2)
             st.metric('LTSM Forecast(7 day)',h,delta = difference)
