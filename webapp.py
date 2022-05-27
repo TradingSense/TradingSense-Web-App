@@ -23,12 +23,14 @@ ticker_input = st.text_input('Please enter company ticker:')
 search_button = st.button('- Get Signal -')
 
 def foo(ticker_input):
-
+day = 1
     weekday = datetime.today().weekday()
     if weekday == 0:
         day = 3
     elif weekday == 6:
         day = 2
+    else:
+        day = 1
     ticker = ticker_input
     col1,col2,col3 = st.columns(3)
 
