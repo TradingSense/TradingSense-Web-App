@@ -24,7 +24,7 @@ search_button = st.button('- Get Signal -')
 
 def foo(ticker_input):
 
-    weekday = datetime.datetime.today().weekday()
+    weekday = datetime.today().weekday()
     if weekday == 0:
         day = 3
     elif weekday == 6:
