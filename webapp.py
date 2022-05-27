@@ -76,8 +76,8 @@ def foo(ticker_input):
         recc='HOLD'
 
    
+    acc = 100 - accuracy 
     
-
     difference = h - live
     difference = round(difference,2)
     old = customdata['close'].tail()
@@ -93,7 +93,7 @@ def foo(ticker_input):
     col1.metric('Signal',str(recc),delta_color="green")
     col2.metric('Current Price',round(live,2),delta=str(pastprice)+'(24hr)')
     col3.metric('1 Week Forecast Price: ',str(h),delta=str(difference)+'(7 Days)')
-    col3.metric('Forecast Accuracy',100-str(accuracy)+'%')
+    col3.metric('Forecast Accuracy',str(acc)+'%')
     st.write('---')
     st.write('--Signal Indicators--')
     st.write('Williams Percent Range: '+str(customheight))
