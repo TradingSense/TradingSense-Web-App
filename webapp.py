@@ -23,12 +23,18 @@ ticker_input = st.text_input('Please enter company ticker:')
 search_button = st.button('- Get Signal -')
 
 def foo(ticker_input):
+
+    weekday = datetime.datetime.today().weekday()
+    if weekday == 0:
+        day = 3
+    elif weekday == 6
+        day = 2
     ticker = ticker_input
     col1,col2,col3 = st.columns(3)
 
     
     today = date.today()
-    yesterday = today - timedelta(days = 1)
+    yesterday = today - timedelta(days = day)
     start = '2022-01-01'      
     end = datetime.today().strftime('%Y-%m-%d')
 
@@ -38,7 +44,7 @@ def foo(ticker_input):
     custommfi = stock.get('mfi')[yesterday.strftime('%Y-%m-%d')].round(2)*100
     customwr = stock.get('wr')[yesterday.strftime('%Y-%m-%d')].round(2)
 
-    h = stocker.predict.tomorrow(ticker)[0]
+    h = stocker.predict.tomorrow(7,ticker)[0]
     live = si.get_live_price(ticker)
 
     if custommfi < 20:
@@ -93,5 +99,7 @@ def foo(ticker_input):
 
 if search_button:
     foo(ticker_input)
+
+
 
 
