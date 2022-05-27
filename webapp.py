@@ -27,7 +27,7 @@ def foo(ticker_input):
     weekday = datetime.datetime.today().weekday()
     if weekday == 0:
         day = 3
-    elif weekday == 6
+    elif weekday == 6:
         day = 2
     ticker = ticker_input
     col1,col2,col3 = st.columns(3)
