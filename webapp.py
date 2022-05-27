@@ -46,7 +46,9 @@ def foo(ticker_input):
     custommfi = stock.get('mfi')[yesterday.strftime('%Y-%m-%d')].round(2)*100
     customwr = stock.get('wr')[yesterday.strftime('%Y-%m-%d')].round(2)
 
-    h = stocker.predict.tomorrow(ticker)[0]
+    h1 = stocker.predict.tomorrow(ticker)
+    h = h1[0]
+    accuracy = h1[2]
     live = si.get_live_price(ticker)
 
     if custommfi < 20:
@@ -91,6 +93,7 @@ def foo(ticker_input):
     col1.metric('Signal',str(recc),delta_color="green")
     col2.metric('Current Price',round(live,2),delta=str(pastprice)+'(24hr)')
     col3.metric('1 Week Forecast Price: ',str(h),delta=str(difference)+'(7 Days)')
+    col3.metric('Forecast Accuracy',accuracy)
     st.write('---')
     st.write('--Signal Indicators--')
     st.write('Williams Percent Range: '+str(customheight))
