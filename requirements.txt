@@ -8,3 +8,4 @@ dataframe-image==0.1.1
 DateTime==4.4
 requests==2.27.1
 beautifulsoup4==4.10.0
+streamlit==1.9.0
