@@ -48,7 +48,7 @@ def foo(ticker_input):
 
     h1 = stocker.predict.tomorrow(ticker)
     h = h1[0]
-    accuracy = h1[2]
+    accuracy = h1[1]
     live = si.get_live_price(ticker)
 
     if custommfi < 20:
