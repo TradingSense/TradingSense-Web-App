@@ -74,6 +74,8 @@ def foo(ticker_input):
         recc = 'HOLD'
     elif customheight == "Lower Than Normal" and h > live:
         recc = 'BUY'
+    elif customheight == 'Higher Than Normal' and h < live:
+        recc='SELL'
     
     else:
         recc='HOLD'
